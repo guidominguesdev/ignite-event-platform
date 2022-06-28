@@ -1,14 +1,8 @@
-import { DefaultUi, Player, Youtube } from "@vime/react";
-import { useGetLessonBySlugQuery } from "../graphql/generated";
-
-import {
-  CaretRight,
-  DiscordLogo,
-  FileArrowDown,
-  Lightning,
-} from "phosphor-react";
-
-import "@vime/core/themes/default.css";
+import { DefaultUi, Player, Youtube } from '@vime/react';
+import { useGetLessonBySlugQuery } from '../graphql/generated';
+import { Translation } from '@vime/core';
+import { CaretRight, DiscordLogo, FileArrowDown, Lightning } from 'phosphor-react';
+import '@vime/core/themes/default.css';
 
 interface VideoProps {
   lessonSlug: string;
@@ -19,7 +13,7 @@ export function Video(props: VideoProps) {
     variables: {
       slug: props.lessonSlug,
     },
-    fetchPolicy: "no-cache",
+    fetchPolicy: 'no-cache',
   });
 
   if (!data || !data.lesson) {
@@ -44,9 +38,7 @@ export function Video(props: VideoProps) {
         <div className="flex items-start gap-16">
           <div className="flex-1">
             <h1 className="text-2xl font-bold">{data.lesson.title}</h1>
-            <p className="mt-4 text-gray-200 leading-relaxed">
-              {data.lesson.description}
-            </p>
+            <p className="mt-4 text-gray-200 leading-relaxed">{data.lesson.description}</p>
             {data.lesson.teacher && (
               <div className="flex items-center gap-4 mt-6">
                 <img
@@ -55,12 +47,8 @@ export function Video(props: VideoProps) {
                   alt=""
                 />
                 <div className="leading-relaxed">
-                  <strong className="font-bold text-2xl block">
-                    {data.lesson.teacher.name}
-                  </strong>
-                  <span className="text-gray-200 text-sm block">
-                    {data.lesson.teacher.bio}
-                  </span>
+                  <strong className="font-bold text-2xl block">{data.lesson.teacher.name}</strong>
+                  <span className="text-gray-200 text-sm block">{data.lesson.teacher.bio}</span>
                 </div>
               </div>
             )}
@@ -93,11 +81,10 @@ export function Video(props: VideoProps) {
             <div className="py-6 leading-relaxed">
               <strong className="text-2xl">Material complementar</strong>
               <p className="text-sm text-gray-200 mt-2">
-                Acesse o material complementar para acelerar o seu
-                desenvolvimento
+                Acesse o material complementar para acelerar o seu desenvolvimento
               </p>
             </div>
-            <div className="h-full p-6 flex items-center">
+            <div className="h-full text-blue-500 p-6 flex items-center">
               <CaretRight size={24} />
             </div>
           </a>
@@ -111,11 +98,10 @@ export function Video(props: VideoProps) {
             <div className="py-6 leading-relaxed">
               <strong className="text-2xl">Wallpapers exclusivos</strong>
               <p className="text-sm text-gray-200 mt-2">
-                Baixe wallpapers exclusivos do Ignite Lab e personalize a sua
-                máquina
+                Baixe wallpapers exclusivos do Ignite Lab e personalize a sua máquina
               </p>
             </div>
-            <div className="h-full p-6 flex items-center">
+            <div className="h-full text-blue-500 p-6 flex items-center">
               <CaretRight size={24} />
             </div>
           </a>
