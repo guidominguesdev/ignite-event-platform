@@ -24,13 +24,13 @@ export function Lesson(props: LessonProps) {
   return (
     <div
       className={classNames('group', {
-        'cursor-not-allowed': !isActiveLesson,
+        'cursor-not-allowed': !isLessonAvailable,
       })}
     >
       <Link
         to={`/event/lesson/${props.slug}`}
         className={classNames('group', {
-          'pointer-events-none': !isActiveLesson,
+          'pointer-events-none': !isLessonAvailable,
         })}
       >
         <span className="text-gray-300">{availableDateFormatted}</span>
