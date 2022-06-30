@@ -67,7 +67,7 @@ export const { styled, css, globalCss, keyframes, getCssText, theme, createTheme
     },
     fontWeights: {
       regular: 400,
-      semibold: 600,
+      medium: 500,
       bold: 700,
     },
     lineHeights: {
@@ -83,6 +83,7 @@ export const { styled, css, globalCss, keyframes, getCssText, theme, createTheme
       heavy: '4px',
     },
     radii: {
+      xxs: '2px',
       xs: '4px',
       sm: '8px',
       md: '12px',
@@ -177,6 +178,7 @@ export const globalStyles = globalCss({
   },
   'a, button': {
     cursor: 'pointer',
+    backgroundColor: 'transparent',
   },
   a: {
     textDecoration: 'none',

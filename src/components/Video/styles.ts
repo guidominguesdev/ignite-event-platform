@@ -22,6 +22,9 @@ export const InfoArea = styled('div', {
       flexDirection: 'column',
     },
   },
+  '@sm': {
+    padding: '$5',
+  },
 });
 
 export const Class = styled('div', {
@@ -55,6 +58,15 @@ export const Class = styled('div', {
     span: {
       display: 'block',
       color: '$gray200',
+      fontSize: '$sm',
+    },
+  },
+  '@sm': {
+    gap: '$10',
+    h1: {
+      fontSize: '$lg',
+    },
+    p: {
       fontSize: '$sm',
     },
   },
@@ -103,6 +115,7 @@ export const Downloads = styled('div', {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
+    width: '100%',
     overflow: 'hidden',
     gap: '$6',
     backgroundColor: '$gray700',
@@ -140,6 +153,7 @@ export const Downloads = styled('div', {
     '.description': {
       fontSize: '$sm',
       color: '$gray200',
+      lineHeight: '$base',
       marginTop: '$2',
     },
     '.arrow': {
@@ -155,5 +169,19 @@ export const Downloads = styled('div', {
   },
   '@lg': {
     flexDirection: 'column',
+  },
+  '@sm': {
+    '.item': {
+      gap: '$4',
+      '.content': {
+        gap: '$4',
+      },
+      '.title': {
+        fontSize: '$lg',
+      },
+      '.arrow': {
+        padding: '$4',
+      },
+    },
   },
 });
